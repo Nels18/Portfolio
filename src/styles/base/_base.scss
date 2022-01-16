@@ -1,0 +1,85 @@
+html {
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    p, li {
+        line-height: 1.5rem;
+        margin: 0.5rem 0;
+    }
+
+    h1, h2 {
+        color: $light-grey;
+    }
+
+    body {
+        min-width: 320px;
+        
+        section {
+            padding: 4em 10%;
+        }
+    
+        .shadow {
+            box-shadow: 8px 14px 38px rgb(39 44 49 / 6%), 1px 3px 8px rgb(39 44 49 / 3%);
+        }
+
+        .overlay {
+            background-color: #2165c1;
+            position: absolute; /* Sit on top of the page content */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.5;
+        }
+
+        .logo {
+            width: 125px;
+            height: 75px;
+            background-position-x: 50%;
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 0 auto;
+        }
+    
+        .paristic-img {
+            background-image: url(/public/img/paristic.png);
+        }
+        
+        .logo-ds {
+            background-image: url(/public/img/logo-donkeyschool.png);
+        }
+        .logo-lem {
+            
+            background-image: url(/public/img/logo-lem.png);
+        }
+    }
+}
+
+@include useBreakpoint(sm) {
+    html {
+        body {
+            section {
+                padding: 4em 20%;
+            }
+        }
+    }
+}
+
+@include useBreakpoint(md) {
+    html {
+        body {
+            .card__horizontal {
+                display: flex;
+                flex-direction: row;
+
+                .logo {
+                    align-self: center;
+                }
+            }
+        }
+    }
+}

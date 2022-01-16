@@ -1,0 +1,76 @@
+body {
+    font-family: $text-font;
+    font-size: 16px;
+
+    h1, h2, h3, h4 {
+        font-family: $title-font;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin: 2rem 0;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        margin: 1.4rem 0;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        margin: 1.2rem 0;
+    }
+}
+
+@include useBreakpoint(xs) {
+    body {
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+    
+        h2 {
+            font-size: 2rem;
+        }
+    
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    
+        h4 {
+            font-size: 1.3rem;
+            margin: 1.3rem 0;
+        }
+    }
+}
+
+@include useBreakpoint(lg) {
+    body {
+
+        h1 {
+            font-size: 8rem;
+            margin-bottom: 2rem;
+        }
+    
+        h2 {
+            font-size: 4.5rem;
+        }
+    
+        h3 {
+            font-size: 4rem;
+            margin: 4rem 0;
+        }
+    
+        h4 {
+            font-size: 2rem;
+            margin: 2rem 0;
+        }
+    }
+}

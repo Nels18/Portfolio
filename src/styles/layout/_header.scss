@@ -1,0 +1,38 @@
+.header {
+    background-image: url(/public/img/desk-bg.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.header__title {
+    max-width: 260px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    position: relative;
+
+    h2 {
+        margin: 2rem 0;
+        color: $primary-color;
+    }
+}
+
+@include useBreakpoint(xs) {
+    .header__title {
+        max-width: 300px;
+    }
+}
+
+@include useBreakpoint(sm) {
+    .header__title {
+        margin: 200px auto 0 20%;
+    }
+}
+
+@include useBreakpoint(lg) {
+    .header__title {
+        max-width: 600px;
+    }
+}

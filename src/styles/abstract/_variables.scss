@@ -1,0 +1,75 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Title font family
+/// @type List
+$title-font: 'Lato', Arial, Helvetica, sans-serif;
+;
+
+/// Regular text font family
+/// @type List
+$text-font: 'Exo 2', Arial, Helvetica, sans-serif;
+;
+
+/// Aquamarine
+/// @type Color
+$aquamarine: #2BCCC4;
+
+/// Congress Blue
+/// @type Color
+$congress-blue: #2065C1;
+
+/// Dark Grey
+/// @type Color
+$dark-grey: hsl(0, 0%, 20%);
+
+/// Light Grey
+/// @type Color
+$light-grey: hsl(0, 0%, 95%);
+
+/// Primary
+/// @type Color
+/// @require $aquamarine;
+$primary-color: $aquamarine;
+
+/// Secondary
+/// @type Color
+/// @require $congress-blue;
+$secondary-color: $congress-blue;
+
+/// Light Primary
+/// @type Color
+/// @require $primary-color
+$light-primary-color: scale-color($primary-color, $lightness: 40%);
+
+/// Dark Primary
+/// @type Color
+/// @require $primary-color
+$dark-primary-color: scale-color($primary-color, $lightness: -50%);
+
+
+/// Darker Primary
+/// @type Color
+/// @require $primary-color
+$darker-primary-color: scale-color($primary-color, $lightness: -80%);
+
+/// light Secondary
+/// @type Color
+/// @require $secondary-color
+$light-secondary-color: scale-color($secondary-color, $lightness: 20%);
+
+/// Dark Secondary
+/// @type Color
+/// @require $secondary-color
+$dark-secondary-color: scale-color($secondary-color, $lightness: -20%);
+
+/// Breackpoints
+$breakpoints: (
+  xs: 360px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

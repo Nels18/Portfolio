@@ -1,0 +1,42 @@
+.nav__container {
+    display: flex;
+    align-items: center;
+    min-width: 320px;
+    background-color: #222;
+    position: relative;
+
+    .burger__btn {
+        right: 20px;
+
+        @media screen and (max-width: 320px) {
+            right: 20px;
+        }
+    }
+
+    // .nav__links {
+        
+    // }
+}
+
+@include useBreakpoint(lg) {
+    .nav__container {
+        justify-content: flex-end;
+        background-color: #ddd;
+
+        .nav__links {
+            display: flex;
+            padding: 1.5rem;
+            justify-content: flex-end;
+            position: sticky;
+        
+            .nav__link {
+                display: block;
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+
+    .burger__btn {
+        display: none;
+    }
+}
