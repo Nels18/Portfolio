@@ -1,42 +1,116 @@
+// -----------------------------------------------------------------------------
+// Navbar component layout
+// -----------------------------------------------------------------------------
+
 .nav__container {
-    display: flex;
-    align-items: center;
-    min-width: 320px;
-    background-color: #222;
-    position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 320px;
+  background-color: $dark-grey;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  z-index: 10;
+  transition: height 0.3s ease-in-out;
 
-    .burger__btn {
-        right: 20px;
+  .burger__btn {
+    right: 2em;
+    top: 2em;
+  }
 
-        @media screen and (max-width: 320px) {
-            right: 20px;
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    margin: 0 2em;
+    font-size: 2rem;
+    transition: height 1s;
+
+    .nav__link {
+      margin: 2rem 0;
+
+      & > a {
+        color: $light-grey;
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        &:after {
+          display: block;
+          content: "";
+          width: 0;
+          height: 1px;
+          margin-top: 0.5em;
+          background-color: $primary-color;
+          transition: width 0.5s;
         }
-    }
+      }
 
-    // .nav__links {
-        
-    // }
+      &:hover {
+        & > a:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.nav__container.active {
+  height: 100vh;
+  background-color: $dark-grey;
+  .nav__links {
+    display: flex;
+
+    .nav__link > a {
+      opacity: 1;
+    }
+  }
+}
+
+.sticky {
+  position: fixed;
 }
 
 @include useBreakpoint(lg) {
-    .nav__container {
-        justify-content: flex-end;
-        background-color: #ddd;
+  .nav__container,
+  .nav__container.active {
+    justify-content: flex-end;
+    height: 60px;
 
-        .nav__links {
-            display: flex;
-            padding: 1.5rem;
-            justify-content: flex-end;
-            position: sticky;
-        
-            .nav__link {
-                display: block;
-                padding: 0.5rem 1rem;
-            }
-        }
-    }
+    .nav__links {
+      display: flex;
+      padding: 0 1.5rem;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: row;
+      position: sticky;
+      margin: 0;
+      height: 60px;
 
-    .burger__btn {
-        display: none;
+      li {
+        margin: 0;
+        height: 60px;
+        display: flex;
+        align-content: center;
+      }
+
+      .nav__link > a {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        padding: 0 1rem;
+        opacity: 1;
+      }
     }
+  }
+
+  .nav__link {
+    font-size: 1rem;
+    height: 60px;
+  }
+
+  .burger__btn {
+    display: none;
+  }
 }

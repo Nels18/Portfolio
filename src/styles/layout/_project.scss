@@ -1,3 +1,20 @@
+// -----------------------------------------------------------------------------
+// Project section layout
+// -----------------------------------------------------------------------------
+
 .project {
-    background-color: $secondary-color;
+  background-color: $secondary-color;
+}
+
+@include useBreakpoint(xl) {
+  .project {
+    .card__container {
+      margin: 6em 0;
+
+      .card {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
 }

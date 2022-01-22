@@ -1,13 +1,9 @@
 // -----------------------------------------------------------------------------
-// Contact section layout
+// Education section layout
 // -----------------------------------------------------------------------------
 
-.contact {
-    background-color: $secondary-color;
-    color: $light-grey;
-
-    .form {
-        max-width: 800px;
-        margin: 5em auto;
+.education {
+    h2 {
+        color: $dark-grey;
     }
 }

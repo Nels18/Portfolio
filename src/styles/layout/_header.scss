@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// Header section layout
+// -----------------------------------------------------------------------------
+
 .header {
     background-image: url(/public/img/desk-bg.jpg);
     background-size: cover;
@@ -9,8 +13,8 @@
 
 .header__title {
     max-width: 260px;
-    margin: 0 auto;
-    padding-bottom: 2em;
+    margin: 100px auto 0;
+    padding: 2em 0;
     position: relative;
 
     h2 {
@@ -27,7 +31,7 @@
 
 @include useBreakpoint(sm) {
     .header__title {
-        margin: 200px auto 0 20%;
+        margin: 60px auto 0 20%;
     }
 }
 

@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
+// Sass variables.
 // -----------------------------------------------------------------------------
 
 /// Title font family
@@ -66,6 +66,7 @@ $dark-secondary-color: scale-color($secondary-color, $lightness: -20%);
 
 /// Breackpoints
 $breakpoints: (
+  xxs: 320px,
   xs: 360px,
   sm: 576px,
   md: 768px,

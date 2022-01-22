@@ -1,7 +1,14 @@
-input, textarea {
+// -----------------------------------------------------------------------------
+// Form component layout
+// -----------------------------------------------------------------------------
+
+.form {
+  input,
+  textarea {
     width: 100%;
     border: 1px solid #aaa;
     border-radius: 3px;
     margin: 10px 0;
     padding: 1rem;
+  }
 }

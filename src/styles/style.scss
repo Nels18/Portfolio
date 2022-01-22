@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// Main Style
+// -----------------------------------------------------------------------------
+
 @import
     "abstract/variables",
     "abstract/mixins";
@@ -11,12 +15,14 @@
     "component/button",
     "component/form",
     "component/burger",
-    "component/nav";
+    "component/nav",
+    "component/slider";
 
 @import
     "layout/header",
     "layout/project",
     "layout/profile",
+    "layout/education",
     "layout/technology",
     "layout/contact",
     "layout/footer";

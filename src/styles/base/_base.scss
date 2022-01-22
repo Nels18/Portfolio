@@ -1,4 +1,10 @@
+// -----------------------------------------------------------------------------
+// Basic site style.
+// -----------------------------------------------------------------------------
+
 html {
+    scroll-behavior: smooth;
+
     *, *:before, *:after {
         box-sizing: border-box;
     }
@@ -16,7 +22,11 @@ html {
         min-width: 320px;
         
         section {
-            padding: 4em 10%;
+            padding: 2em 10%;
+        }
+
+        h1, h2 {
+            text-align: center;
         }
     
         .shadow {
@@ -43,6 +53,7 @@ html {
             background-repeat: no-repeat;
             background-size: contain;
             margin: 0 auto;
+            margin-bottom: 20px;
         }
     
         .paristic-img {
@@ -62,23 +73,13 @@ html {
 @include useBreakpoint(sm) {
     html {
         body {
-            section {
-                padding: 4em 20%;
+            h1, h2 {
+                text-align: left;
             }
-        }
-    }
-}
 
-@include useBreakpoint(md) {
-    html {
-        body {
-            .card__horizontal {
-                display: flex;
-                flex-direction: row;
+            section {
+                padding: 5em 20%;
 
-                .logo {
-                    align-self: center;
-                }
             }
         }
     }
