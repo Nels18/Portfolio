@@ -16,6 +16,10 @@
     margin: 100px auto 0;
     padding: 2em 0;
     position: relative;
+    height: 100vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
 
     h2 {
         margin: 2rem 0;

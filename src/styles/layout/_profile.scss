@@ -3,34 +3,57 @@
 // -----------------------------------------------------------------------------
 
 .profile {
-    background-color: $primary-color;
-    color: $light-grey;
-}
-.profile__img {
+  background-color: $primary-color;
+  color: $light-grey;
+
+  .profile__img {
     display: block;
     width: 250px;
+    margin: 0 auto;
+  }
+
+  button {
+    background-color: $secondary-color;
+  }
+
+  .profile__content {
+    a {
+      display: block;
+      text-align: center;
+    }
+  }
 }
 
 @include useBreakpoint(sm) {
-    .profile__img {
-        width: 400px;
-        margin: 0 auto;
+  .profile__img {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@include useBreakpoint(md) {
+  .profile {
+    .profile__content {
+      a {
+        text-align: left;
+      }
     }
+  }
 }
 
 @include useBreakpoint(xl) {
-    .profile__content {
-        display: flex;
-        align-items: center;
-    }
-    
-    .profile__img {
-        width: 500px;
-        margin: 0 4em 0 0;
-    }
+  .profile__content {
+    display: flex;
+    align-items: center;
+  }
 
-    .profile__body {
-        max-width: 500px;
-        font-size: 1.2rem;
-    }
+  .profile__img {
+    width: 500px;
+    margin: 0 4em 0 0;
+  }
+
+  .profile__body {
+    max-width: 500px;
+    font-size: 1.2rem;
+  }
 }

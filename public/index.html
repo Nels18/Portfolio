@@ -30,8 +30,10 @@
         </div>
       </nav>
       <div class="header__title">
-        <h1>Nelson Belgarde</h1>
-        <h2>Développeur web</h2>
+        <div>
+          <h1>Nelson Belgarde</h1>
+          <h2>Développeur web</h2>
+        </div>
       </div>
     </div>
   </header>
@@ -40,9 +42,14 @@
       <h2>À propos de moi</h2>
       <div class="profile__content">
         <img class="profile__img" src="/public/img/memoji.png" alt="une illustration me représentant">
-        <p class="profile__body">Après une carrière de 10 ans dans l'industrie pharmaceutique en tant, je souhaite me
-          reconvertir dans la création de site web. Pour cela j'ai suivi des formations certifiantes pour acquérir les
-          compétences requises pour le métier de développeur web.</p>
+        <div>
+          <p class="profile__body">Après une carrière de 10 ans dans l'industrie pharmaceutique en tant, je souhaite me
+            reconvertir dans la création de site web. Pour cela j'ai suivi des formations certifiantes pour acquérir les
+            compétences requises pour le métier de développeur web.</p>
+            <a href="">
+              <button>Télécharger mon CV</button>
+            </a>
+        </div>
       </div>
     </section>
     <section class="project" id="project-section">
@@ -152,6 +159,7 @@
     <section class="technology" id="technology-section">
       <h2>Technologies</h2>
       <div class="slider">
+        <span class="control control__prev" id="crl__prev"></span>
         <div class="slider__wrapper">
           <div class="slider__item">
             <img src="/public/img/logo_html-5.png" alt="">
@@ -198,6 +206,7 @@
             <p>Wordpress</p>
           </div>
         </div>
+				<span class="control control__next" id="crl__next"></span>
       </div>
     </section>
     <section class="contact" id="contact-section">

@@ -5,4 +5,54 @@
 .technology {
     background-color: $primary-color;
     color: $light-grey;
+    
+    .slider {
+        width: 220px;
+        margin: 3em auto;
+        
+        img {
+            pointer-events: none;
+            width: 120px;
+            padding: 0 .5em;
+        }
+    }
+}
+
+@include useBreakpoint(lg) {
+    .technology {
+        .slider {
+            width: 560px;
+            margin: 3em auto;
+
+            .control__prev {
+                margin-right: 2em;
+            }
+
+            .control__next {
+                margin-left: 2em;
+            }
+
+            img {
+                width: 180px;
+            }
+        }
+    }
+}
+
+@include useBreakpoint(xxl) {
+    .technology {
+        .slider {
+            width: 760px;
+            margin: 3em auto;
+        }
+    }
+}
+
+@include useBreakpoint(xxxl) {
+    .technology {
+        .slider {
+            width: 960px;
+            margin: 3em auto;
+        }
+    }
 }

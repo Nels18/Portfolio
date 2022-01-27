@@ -1,38 +1,87 @@
 // -----------------------------------------------------------------------------
 // Slider component layout
 // -----------------------------------------------------------------------------
-
-.slider__wrapper {
+.slider {
   display: flex;
-  grid-gap: 1rem;
-  // max-width: 768px;
-  width: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x;
-  cursor: grab;
-  scroll-behavior: smooth;
-  scrollbar-width: none; /* for firefox */
-}
-
-.slider__wrapper::-webkit-scrollbar {
-  /* for chrome */
-  display: none;
-}
-
-.slider__item {
-  // min-width: calc(50% - .5rem);
-  // aspect-ratio: 1 / 1;
-  // background: #222;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  color: #fff;
-  font-size: 1.2rem;
-  scroll-snap-align: start;
-  user-select: none;
 
-  img {
-    width: 150px;
+  .control {
+    width: 40px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.9rem;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      display: block;
+      position: absolute;
+      background-color: rgba($color: $light-grey, $alpha: .2)  ;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      line-height: 42px;
+    }
+
+    &:hover::before {
+      background-color: rgba($color: $light-grey, $alpha: .4)  ;
+    }
+  }
+
+  .disabled {
+    opacity: .4;
+  }
+
+  .control__prev {
+    margin-right: 1em;
+    &::before {
+      content: '<';
+    }
+  }
+
+  .control__next {
+    margin-left: 1em;
+    &::before {
+      content: '>';
+    }
+  }
+
+  .slider__wrapper {
+    display: flex;
+    grid-gap: 1rem;
+    // max-width: 768px;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x;
+    cursor: grab;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* for firefox */
+  }
+  
+  .slider__wrapper::-webkit-scrollbar {
+    /* for chrome */
+    display: none;
+  }
+  
+  .slider__item {
+    // min-width: calc(50% - .5rem);
+    // aspect-ratio: 1 / 1;
+    // background: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2rem;
+    scroll-snap-align: start;
+    user-select: none;
+  
+    img {
+      width: 180px;
+    }
   }
 }
