@@ -132,7 +132,7 @@ controlPrev!.onclick = () => {
   }
 };
 
-document.onload = () => {
+window.onload = () => {
   if (currentItem === sliderItems.length) {
     disableControl(controlNext!);
   }
