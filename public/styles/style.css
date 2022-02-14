@@ -977,6 +977,12 @@ button {
 .project {
   background-color: #2065C1;
 }
+.project .card ul {
+  margin-left: 0.5rem;
+}
+.project .card ul li {
+  list-style: inside;
+}
 
 @media screen and (min-width: 1200px) {
   .project .card__container {

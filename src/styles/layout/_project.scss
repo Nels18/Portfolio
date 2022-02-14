@@ -4,6 +4,15 @@
 
 .project {
   background-color: $secondary-color;
+  .card {
+    ul {
+      margin-left: 0.5rem;
+
+      li {
+        list-style: inside;
+      }
+    }
+  }
 }
 
 @include useBreakpoint(xl) {
