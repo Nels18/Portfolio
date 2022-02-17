@@ -12,14 +12,18 @@
     margin: 0 auto;
   }
 
-  button {
-    background-color: $secondary-color;
-  }
-
+  
   .profile__content {
     a {
       display: block;
-      text-align: center;
+      margin: auto;
+      width: 100%;
+
+      button {
+        background-color: $secondary-color;
+        display: block;
+        width: 100%;
+      }
     }
   }
 }
@@ -35,7 +39,12 @@
   .profile {
     .profile__content {
       a {
-        text-align: left;
+        margin: 0;
+        width: fit-content;
+
+        button {
+          display: inline;
+        }
       }
     }
   }

@@ -9,5 +9,19 @@
     .form {
         max-width: 800px;
         margin: 5em auto;
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+@include useBreakpoint(md) {
+    .contact {
+        .form {
+            button {
+                width: fit-content;
+            }
+        }
     }
 }

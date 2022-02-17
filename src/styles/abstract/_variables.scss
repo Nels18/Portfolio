@@ -20,6 +20,10 @@ $aquamarine: #2BCCC4;
 /// @type Color
 $congress-blue: #2065C1;
 
+/// Red Salsa
+/// @type Color
+$red-salsa: #FB3640;
+
 /// Dark Grey
 /// @type Color
 $dark-grey: hsl(0, 0%, 20%);
@@ -37,6 +41,11 @@ $primary-color: $aquamarine;
 /// @type Color
 /// @require $congress-blue;
 $secondary-color: $congress-blue;
+
+/// Danger
+/// @type Color
+/// @require $red-salsa;
+$danger-color: $red-salsa;
 
 /// Light Primary
 /// @type Color

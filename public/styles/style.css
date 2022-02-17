@@ -693,6 +693,10 @@ button {
   background-color: #2BCCC4;
   border: none;
   color: #fff;
+  cursor: pointer;
+}
+button.btn-danger {
+  background-color: #FB3640;
 }
 
 .form input,
@@ -935,6 +939,91 @@ button {
   width: 180px;
 }
 
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  visibility: hidden;
+  transition: visibility 0.6s;
+  position: fixed;
+  min-width: 320px;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.modal .modal__overlay {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.5;
+  transition: opacity 0.6s 0.2s ease-out;
+}
+.modal .modal__body {
+  width: 80%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translate(0, calc(-200% - 50px));
+  transition: opacity 0.6s 0.2s ease-out, transform 0.6s 0.2s ease-out;
+}
+.modal .modal__body .modal__file img {
+  display: block;
+  width: 100%;
+  margin: auto;
+  max-width: 600px;
+}
+.modal .modal__body .modal__file:hover {
+  overflow-x: scroll;
+  width: 70vw;
+  min-width: 210px;
+}
+.modal .modal__body .modal__file:hover img {
+  width: 200%;
+}
+.modal .modal__body .modal__btn {
+  margin-top: 1em;
+}
+.modal .modal__body .modal__btn .btn-danger {
+  margin-left: 1em;
+}
+.modal.visible {
+  visibility: visible;
+  transition: visibility 0s;
+}
+.modal.visible .modal__overlay {
+  opacity: 0.8;
+  transition: opacity 0.6s ease-out;
+}
+.modal.visible .modal__body {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 0.6s 0.2s ease-out, transform 0.6s ease-out;
+}
+
+@media screen and (min-width: 360px) {
+  .modal .modal__body .modal__file:hover img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal .modal__body .modal__file:hover {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 80vh;
+    width: auto;
+  }
+  .modal .modal__body .modal__file:hover img {
+    width: 100%;
+    max-width: none;
+    transform: scale(1);
+  }
+}
 .header {
   background-image: url(/public/img/desk-bg.jpg);
   background-size: cover;
@@ -1002,12 +1091,15 @@ button {
   width: 250px;
   margin: 0 auto;
 }
-.profile button {
-  background-color: #2065C1;
-}
 .profile .profile__content a {
   display: block;
-  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+.profile .profile__content a button {
+  background-color: #2065C1;
+  display: block;
+  width: 100%;
 }
 
 @media screen and (min-width: 576px) {
@@ -1018,7 +1110,11 @@ button {
 }
 @media screen and (min-width: 768px) {
   .profile .profile__content a {
-    text-align: left;
+    margin: 0;
+    width: fit-content;
+  }
+  .profile .profile__content a button {
+    display: inline;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1090,7 +1186,15 @@ button {
   max-width: 800px;
   margin: 5em auto;
 }
+.contact .form button {
+  width: 100%;
+}
 
+@media screen and (min-width: 768px) {
+  .contact .form button {
+    width: fit-content;
+  }
+}
 .footer {
   text-align: center;
   background-color: #2BCCC4;
