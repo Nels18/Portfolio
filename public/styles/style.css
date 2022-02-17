@@ -989,8 +989,8 @@ button.btn-danger {
 .modal .modal__body .modal__btn {
   margin-top: 1em;
 }
-.modal .modal__body .modal__btn .btn-danger {
-  margin-left: 1em;
+.modal .modal__body .modal__btn button {
+  width: 100%;
 }
 .modal.visible {
   visibility: visible;
@@ -1006,12 +1006,10 @@ button.btn-danger {
   transition: opacity 0.6s 0.2s ease-out, transform 0.6s ease-out;
 }
 
-@media screen and (min-width: 360px) {
-  .modal .modal__body .modal__file:hover img {
-    width: 100%;
-  }
-}
 @media screen and (min-width: 768px) {
+  .modal .modal__body .modal__file img {
+    height: 80vh;
+  }
   .modal .modal__body .modal__file:hover {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1020,8 +1018,15 @@ button.btn-danger {
   }
   .modal .modal__body .modal__file:hover img {
     width: 100%;
+    height: auto;
     max-width: none;
     transform: scale(1);
+  }
+  .modal .modal__body .modal__btn button {
+    width: auto;
+  }
+  .modal .modal__body .modal__btn button.btn-danger {
+    margin-left: 1em;
   }
 }
 .header {

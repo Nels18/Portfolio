@@ -54,9 +54,9 @@
 
         .modal__btn {
             margin-top: 1em;
-            
-            .btn-danger {
-                margin-left: 1em;
+
+            button {
+                width: 100%;
             }
         }
     }
@@ -79,31 +79,35 @@
     }
 }
 
-@include useBreakpoint(xs) {
-    .modal {
-        .modal__body {
-            .modal__file:hover {
-                img {
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
-
 @include useBreakpoint(md) {
     .modal {
         .modal__body {
-            .modal__file:hover {
-                overflow-y: scroll;
-                overflow-x: hidden;
-                height: 80vh;
-                width: auto;
-                
+            .modal__file{
                 img {
-                    width: 100%;
-                    max-width: none;
-                    transform: scale(1);
+                    height: 80vh;
+                }
+
+                &:hover {
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                    height: 80vh;
+                    width: auto;
+                    
+                    img {
+                        width: 100%;
+                        height: auto;
+                        max-width: none;
+                        transform: scale(1);
+                    }
+                }
+            }
+            .modal__btn {
+                button {
+                    width: auto;
+
+                    &.btn-danger {
+                        margin-left: 1em;
+                    }
                 }
             }
         }
