@@ -1182,16 +1182,12 @@ button.btn-danger {
   background-color: #2065C1;
   color: #f2f2f2;
 }
-.contact .form {
-  max-width: 800px;
-  margin: 5em auto;
-}
-.contact .form button {
+.contact button {
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  .contact .form button {
+  .contact button {
     width: fit-content;
   }
 }
