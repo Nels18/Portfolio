@@ -10,6 +10,10 @@ const controlNext = document.getElementById("crl__next");
 const sliderItems = document.getElementsByClassName("slider__item");
 const movePer = wrapper.scrollWidth / sliderItems.length;
 const maxMove = wrapper.style.width;
+const btnCloseModal = document.getElementById("btn-close-modal");
+const btnOpenModal = document.getElementById("btn-open-modal");
+const modalResume = document.getElementById("modal-resume");
+const overlayResume = document.querySelector("#modal-resume .modal__overlay");
 let pressed = false;
 let startX = 0;
 let currentItem = 0;
@@ -40,19 +44,27 @@ const enableControl = (control) => {
 const disableControl = (control) => {
     control.classList.add("disabled");
 };
-const right_mover = () => {
+const rightMover = () => {
     if (currentItem > sliderItems.length) {
         return (currentItem = sliderItems.length);
     }
     wrapper.scrollLeft += movePer;
     currentItem++;
 };
-const left_mover = () => {
+const leftMover = () => {
     if (currentItem <= 0) {
         return (currentItem = 0);
     }
     wrapper.scrollLeft -= movePer;
     currentItem--;
+};
+const openModal = () => {
+    console.log('open :', open);
+    modalResume.classList.add("visible");
+};
+const closeModal = () => {
+    console.log('close :', close);
+    modalResume.classList.remove("visible");
 };
 /* Code */
 // Menu
@@ -81,7 +93,7 @@ wrapper.onmouseleave = () => {
 controlNext.onclick = () => {
     if (controlNext === null || controlNext === void 0 ? void 0 : controlNext.classList.contains("disabled"))
         return;
-    right_mover();
+    rightMover();
     if (currentItem === sliderItems.length) {
         disableControl(controlNext);
     }
@@ -92,7 +104,7 @@ controlNext.onclick = () => {
 controlPrev.onclick = () => {
     if (controlPrev === null || controlPrev === void 0 ? void 0 : controlPrev.classList.contains("disabled"))
         return;
-    left_mover();
+    leftMover();
     if (currentItem === 0) {
         disableControl(controlPrev);
     }
@@ -107,4 +119,14 @@ window.onload = () => {
     if (currentItem === 0) {
         disableControl(controlPrev);
     }
+};
+// Modal
+btnOpenModal.onclick = () => {
+    openModal();
+};
+btnCloseModal.onclick = () => {
+    closeModal();
+};
+overlayResume.onclick = () => {
+    closeModal();
 };

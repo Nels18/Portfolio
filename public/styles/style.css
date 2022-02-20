@@ -1096,12 +1096,10 @@ button.btn-danger {
   width: 250px;
   margin: 0 auto;
 }
-.profile .profile__content a {
-  display: block;
+.profile .profile__content .profile__btn__modal {
   margin: auto;
-  width: 100%;
 }
-.profile .profile__content a button {
+.profile .profile__content .profile__btn__modal button {
   background-color: #2065C1;
   display: block;
   width: 100%;
@@ -1114,12 +1112,9 @@ button.btn-danger {
   }
 }
 @media screen and (min-width: 768px) {
-  .profile .profile__content a {
+  .profile .profile__content .profile__btn__modal {
     margin: 0;
     width: fit-content;
-  }
-  .profile .profile__content a button {
-    display: inline;
   }
 }
 @media screen and (min-width: 1200px) {

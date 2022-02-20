@@ -14,10 +14,8 @@
 
   
   .profile__content {
-    a {
-      display: block;
+    .profile__btn__modal {
       margin: auto;
-      width: 100%;
 
       button {
         background-color: $secondary-color;
@@ -38,13 +36,9 @@
 @include useBreakpoint(md) {
   .profile {
     .profile__content {
-      a {
+      .profile__btn__modal {
         margin: 0;
         width: fit-content;
-
-        button {
-          display: inline;
-        }
       }
     }
   }

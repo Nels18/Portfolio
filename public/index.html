@@ -42,16 +42,16 @@
       <h2>À propos de moi</h2>
       <div class="profile__content">
         <img class="profile__img" src="/public/img/memoji.png" alt="une illustration me représentant">
-        <div>
-          <p class="profile__body">Après une carrière de 10 ans dans l'industrie pharmaceutique en tant, je souhaite me
+        <div class="profile__body">
+          <p>Après une carrière de 10 ans dans l'industrie pharmaceutique en tant, je souhaite me
             reconvertir dans la création de site web. Pour cela j'ai suivi des formations certifiantes pour acquérir les
             compétences requises pour le métier de développeur web.</p>
-          <a href="/public/download/nelson_belgarde.png">
-            <button>Voir mon CV</button>
-          </a>
+          <div class="profile__btn__modal">
+            <button id="btn-open-modal">Voir mon CV</button>
+          </div>
         </div>
       </div>
-      <div class="modal visible">
+      <div class="modal" id="modal-resume">
         <div class="modal__overlay"></div>
         <div class="modal__body">
           <div class="modal__file">
@@ -61,7 +61,7 @@
             <a href="/public/download/cv_nelson_belgarde.pdf" target="blank">
               <button>Télécharger mon CV</button>
             </a>
-            <button class="btn-danger">Fermer</button>
+            <button class="btn-danger" id="btn-close-modal">Fermer</button>
           </div>
         </div>
       </div>
