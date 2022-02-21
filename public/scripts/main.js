@@ -14,6 +14,8 @@ const btnCloseModal = document.getElementById("btn-close-modal");
 const btnOpenModal = document.getElementById("btn-open-modal");
 const modalResume = document.getElementById("modal-resume");
 const overlayResume = document.querySelector("#modal-resume .modal__overlay");
+const modalBody = document.querySelector("#modal-resume .modal__body");
+const modalImg = document.querySelector("#modal-resume img");
 let pressed = false;
 let startX = 0;
 let currentItem = 0;
@@ -129,4 +131,10 @@ btnCloseModal.onclick = () => {
 };
 overlayResume.onclick = () => {
     closeModal();
+};
+modalBody.onclick = (event) => {
+    closeModal();
+};
+modalImg.onclick = (event) => {
+    event.stopPropagation();
 };

@@ -637,6 +637,7 @@ html body .logo-lem {
 .card {
   margin: 6em 0;
   background-color: #fff;
+  border-radius: 3px;
 }
 .card .card__title {
   font-size: 1.4rem;
@@ -652,6 +653,8 @@ html body .logo-lem {
   background-position-x: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .card .card__body {
   padding: 20px;
@@ -690,13 +693,43 @@ button {
   padding: 10px 30px;
   font-weight: 700;
   margin: 10px 0;
-  background-color: #2BCCC4;
   border: none;
+  border-radius: 3px;
   color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+button.btn-primary {
+  background-color: #2BCCC4;
+}
+button.btn-primary:hover {
+  background-color: #7de4de;
+  color: #333333;
+}
+button.btn-primary:active {
+  background-color: #1e8f89;
+  color: #fff;
+}
+button.btn-secondary {
+  background-color: #2065C1;
+}
+button.btn-secondary:hover {
+  background-color: #3b81df;
+}
+button.btn-secondary:active {
+  background-color: #1a519a;
 }
 button.btn-danger {
   background-color: #FB3640;
+}
+button.btn-danger:hover {
+  background-color: #fc5e66;
+}
+button.btn-danger:active {
+  background-color: #ef0511;
+}
+button:focus {
+  outline: none;
 }
 
 .form input,
@@ -891,6 +924,7 @@ button.btn-danger {
   height: 1.5em;
   border-radius: 50%;
   line-height: 42px;
+  transition: background-color 0.3s ease-out;
 }
 .slider .control:hover::before {
   background-color: rgba(242, 242, 242, 0.4);
@@ -1100,7 +1134,6 @@ button.btn-danger {
   margin: auto;
 }
 .profile .profile__content .profile__btn__modal button {
-  background-color: #2065C1;
   display: block;
   width: 100%;
 }
@@ -1198,9 +1231,17 @@ button.btn-danger {
 }
 .footer .icon-link {
   margin-right: 0.5em;
+  transition: opacity 0.3s ease-out;
 }
 .footer .icon-link:hover {
   opacity: 0.6;
+  transform: rotate(25deg);
+}
+.footer .icon-link svg {
+  transition: transform 0.3s ease-out;
+}
+.footer .icon-link svg:hover {
+  transform: rotate(25deg) scale(1.2);
 }
 
 /*# sourceMappingURL=style.css.map */

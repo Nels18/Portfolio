@@ -2,12 +2,52 @@ button {
     padding: 10px 30px;
     font-weight: 700;
     margin: 10px 0;
-    background-color: $primary-color;
     border: none;
+    border-radius: 3px;
     color: #fff;
     cursor: pointer;
+    transition: background-color .3s ease-out,
+                color .3s ease-out;
+
+    &.btn-primary {
+        background-color: $primary-color;
+
+        &:hover {
+            background-color: $light-primary-color;
+            color: $dark-grey;
+        }
+
+        &:active {
+            background-color: $dark-primary-color;
+            color: #fff;
+        }
+    }
+
+    &.btn-secondary {
+        background-color: $secondary-color;
+
+        &:hover {
+            background-color: $light-secondary-color;
+        }
+
+        &:active {
+            background-color: $dark-secondary-color;
+        }
+    }
 
     &.btn-danger {
         background-color: $danger-color;
+
+        &:hover {
+            background-color: $light-danger-color;
+        }
+
+        &:active {
+            background-color: $dark-danger-color;
+        }
+    }
+
+    &:focus {
+        outline: none;
     }
 }
