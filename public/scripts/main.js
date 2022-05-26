@@ -8,8 +8,7 @@ const slideImg = document.querySelector(".slider__wrapper img");
 const controlPrev = document.getElementById("crl__prev");
 const controlNext = document.getElementById("crl__next");
 const sliderItems = document.getElementsByClassName("slider__item");
-const movePer = wrapper.scrollWidth / sliderItems.length;
-const maxMove = wrapper.style.width;
+let movePer;
 const btnCloseModal = document.getElementById("btn-close-modal");
 const btnOpenModal = document.getElementById("btn-open-modal");
 const modalResume = document.getElementById("modal-resume");
@@ -21,120 +20,131 @@ let startX = 0;
 let currentItem = 0;
 /* Fonctions */
 const toggleMenu = () => {
-    navbar === null || navbar === void 0 ? void 0 : navbar.classList.toggle("active");
+  navbar === null || navbar === void 0
+    ? void 0
+    : navbar.classList.toggle("active");
 };
 const hideMenu = () => {
-    navbar === null || navbar === void 0 ? void 0 : navbar.classList.remove("active");
+  navbar === null || navbar === void 0
+    ? void 0
+    : navbar.classList.remove("active");
 };
 const moveSliderItem = (event) => {
-    if (!pressed)
-        return;
-    wrapper.scrollLeft += startX - event.clientX;
+  if (!pressed) return;
+  wrapper.scrollLeft += startX - event.clientX;
 };
 const dropSliderItem = () => {
-    pressed = false;
-    wrapper.style.cursor = "grab";
+  pressed = false;
+  wrapper.style.cursor = "grab";
 };
 const dragSliderItem = (event) => {
-    pressed = true;
-    startX = event.clientX;
-    wrapper.style.cursor = "grabbing";
+  pressed = true;
+  startX = event.clientX;
+  wrapper.style.cursor = "grabbing";
 };
 const enableControl = (control) => {
-    control.classList.remove("disabled");
+  control.classList.remove("disabled");
 };
 const disableControl = (control) => {
-    control.classList.add("disabled");
+  control.classList.add("disabled");
 };
 const rightMover = () => {
-    if (currentItem > sliderItems.length) {
-        return (currentItem = sliderItems.length);
-    }
-    wrapper.scrollLeft += movePer;
-    currentItem++;
+  movePer = wrapper.scrollWidth / sliderItems.length;
+  if (currentItem > sliderItems.length) {
+    return (currentItem = sliderItems.length);
+  }
+  wrapper.scrollLeft += movePer;
+  currentItem++;
 };
 const leftMover = () => {
-    if (currentItem <= 0) {
-        return (currentItem = 0);
-    }
-    wrapper.scrollLeft -= movePer;
-    currentItem--;
+  movePer = wrapper.scrollWidth / sliderItems.length;
+  if (currentItem <= 0) {
+    return (currentItem = 0);
+  }
+  wrapper.scrollLeft -= movePer;
+  currentItem--;
 };
 const openModal = () => {
-    console.log('open :', open);
-    modalResume.classList.add("visible");
+  modalResume.classList.add("visible");
 };
 const closeModal = () => {
-    console.log('close :', close);
-    modalResume.classList.remove("visible");
+  modalResume.classList.remove("visible");
 };
 /* Code */
 // Menu
 navbarLinks.forEach((link) => {
-    link.onclick = () => {
-        hideMenu();
-    };
+  link.onclick = () => {
+    hideMenu();
+  };
 });
 burger.onclick = () => {
-    toggleMenu();
+  toggleMenu();
 };
 // Slider
 wrapper.onmousedown = (event) => {
-    dragSliderItem(event);
+  dragSliderItem(event);
 };
 wrapper.onmouseup = () => {
-    dropSliderItem();
+  dropSliderItem();
 };
 wrapper.onmousemove = (event) => {
-    moveSliderItem(event);
+  moveSliderItem(event);
 };
 wrapper.onmouseleave = () => {
-    pressed = false;
+  pressed = false;
 };
 // Control
 controlNext.onclick = () => {
-    if (controlNext === null || controlNext === void 0 ? void 0 : controlNext.classList.contains("disabled"))
-        return;
-    rightMover();
-    if (currentItem === sliderItems.length) {
-        disableControl(controlNext);
-    }
-    if (currentItem !== 0) {
-        enableControl(controlPrev);
-    }
+  if (
+    controlNext === null || controlNext === void 0
+      ? void 0
+      : controlNext.classList.contains("disabled")
+  )
+    return;
+  rightMover();
+  if (currentItem === sliderItems.length) {
+    disableControl(controlNext);
+  }
+  if (currentItem !== 0) {
+    enableControl(controlPrev);
+  }
 };
 controlPrev.onclick = () => {
-    if (controlPrev === null || controlPrev === void 0 ? void 0 : controlPrev.classList.contains("disabled"))
-        return;
-    leftMover();
-    if (currentItem === 0) {
-        disableControl(controlPrev);
-    }
-    if (currentItem !== sliderItems.length) {
-        enableControl(controlNext);
-    }
+  if (
+    controlPrev === null || controlPrev === void 0
+      ? void 0
+      : controlPrev.classList.contains("disabled")
+  )
+    return;
+  leftMover();
+  if (currentItem === 0) {
+    disableControl(controlPrev);
+  }
+  if (currentItem !== sliderItems.length) {
+    enableControl(controlNext);
+  }
 };
 window.onload = () => {
-    if (currentItem === sliderItems.length) {
-        disableControl(controlNext);
-    }
-    if (currentItem === 0) {
-        disableControl(controlPrev);
-    }
+  if (currentItem === sliderItems.length) {
+    disableControl(controlNext);
+  }
+  if (currentItem === 0) {
+    disableControl(controlPrev);
+  }
 };
 // Modal
 btnOpenModal.onclick = () => {
-    openModal();
+  openModal();
 };
 btnCloseModal.onclick = () => {
-    closeModal();
+  closeModal();
 };
 overlayResume.onclick = () => {
-    closeModal();
+  closeModal();
 };
 modalBody.onclick = (event) => {
-    closeModal();
+  closeModal();
 };
 modalImg.onclick = (event) => {
-    event.stopPropagation();
+  event.stopPropagation();
 };

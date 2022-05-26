@@ -10,8 +10,7 @@ const slideImg = document.querySelector<HTMLElement>(".slider__wrapper img");
 const controlPrev = document.getElementById("crl__prev");
 const controlNext = document.getElementById("crl__next");
 const sliderItems = document.getElementsByClassName("slider__item");
-const movePer = wrapper!.scrollWidth / sliderItems.length;
-const maxMove = wrapper!.style.width;
+let movePer: number | undefined;
 
 const btnCloseModal = document.getElementById("btn-close-modal");
 const btnOpenModal = document.getElementById("btn-open-modal");
@@ -60,30 +59,34 @@ const disableControl = (control: HTMLElement) => {
 };
 
 const rightMover = () => {
+  movePer = wrapper!.scrollWidth / sliderItems.length;
   if (currentItem > sliderItems.length) {
     return (currentItem = sliderItems.length);
   }
 
   wrapper!.scrollLeft += movePer;
   currentItem++;
+  console.log("movePer :", movePer);
 };
 
 const leftMover = () => {
+  movePer = wrapper!.scrollWidth / sliderItems.length;
   if (currentItem <= 0) {
     return (currentItem = 0);
   }
 
   wrapper!.scrollLeft -= movePer;
   currentItem--;
+  console.log("movePer :", movePer);
 };
 
 const openModal = () => {
-  console.log('open :', open);
+  console.log("open :", open);
   modalResume!.classList.add("visible");
 };
 
 const closeModal = () => {
-  console.log('close :', close);
+  console.log("close :", close);
   modalResume!.classList.remove("visible");
 };
 
