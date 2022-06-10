@@ -21,7 +21,7 @@ export class Slider {
       `#${name}__slider__wrapper .slider__item`
     );
 
-    console.log("`#${name}__slider__wrapper` :", `#${name}__slider__wrapper`);
+    // console.log("`#${name}__slider__wrapper` :", `#${name}__slider__wrapper`);
 
     this.wrapper!.onmousedown = (event: MouseEvent) => {
       this.dragSliderItem(event);
@@ -65,6 +65,7 @@ export class Slider {
     //   `.${name}__slider__wrapper .slider__item`
     // );
     // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
+    // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
   }
 
   moveSliderItem = (event: MouseEvent) => {
@@ -81,7 +82,7 @@ export class Slider {
     this.pressed = true;
     this.startX = event.clientX;
     this.wrapper!.style.cursor = "grabbing";
-    console.log("this.startX :", this.startX);
+    // console.log("this.startX :", this.startX);
   };
 
   enableControl = (control: HTMLElement) => {
@@ -93,7 +94,6 @@ export class Slider {
   };
 
   rightMover = () => {
-    console.log(this.wrapper!.scrollWidth);
     this.movePer = this.wrapper!.scrollWidth / this.sliderItems!.length;
     if (this.currentItem > this.sliderItems!.length) {
       return (this.currentItem = this.sliderItems!.length);
@@ -101,10 +101,11 @@ export class Slider {
 
     this.wrapper!.scrollLeft += this.movePer;
     this.currentItem++;
-    console.log("this.wrapper!.scrollWidth :", this.wrapper!.scrollWidth);
-    console.log("this.sliderItems!.length :", this.sliderItems!.length);
-    console.log("this.movePer :", this.movePer);
-    console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
+    // console.log("this.wrapper!.scrollWidth :", this.wrapper!.scrollWidth);
+    // console.log("this.sliderItems!.length :", this.sliderItems!.length);
+    // console.log("this.movePer :", this.movePer);
+    // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
+    // console.log('----');
   };
 
   leftMover = () => {
@@ -115,10 +116,11 @@ export class Slider {
 
     this.wrapper!.scrollLeft -= this.movePer;
     this.currentItem--;
-    console.log("this.wrapper!.scrollWidth :", this.wrapper!.scrollWidth);
-    console.log("this.sliderItems!.length :", this.sliderItems!.length);
-    console.log("this.movePer :", this.movePer);
-    console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
+    // console.log("this.wrapper!.scrollWidth :", this.wrapper!.scrollWidth);
+    // console.log("this.sliderItems!.length :", this.sliderItems!.length);
+    // console.log("this.movePer :", this.movePer);
+    // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
+    // console.log('++++');
   };
 
   handlerControlNext = () => {

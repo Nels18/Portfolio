@@ -16,7 +16,7 @@ export class Slider {
             this.pressed = true;
             this.startX = event.clientX;
             this.wrapper.style.cursor = "grabbing";
-            console.log("this.startX :", this.startX);
+            // console.log("this.startX :", this.startX);
         };
         this.enableControl = (control) => {
             control.classList.remove("disabled");
@@ -25,17 +25,17 @@ export class Slider {
             control.classList.add("disabled");
         };
         this.rightMover = () => {
-            console.log(this.wrapper.scrollWidth);
             this.movePer = this.wrapper.scrollWidth / this.sliderItems.length;
             if (this.currentItem > this.sliderItems.length) {
                 return (this.currentItem = this.sliderItems.length);
             }
             this.wrapper.scrollLeft += this.movePer;
             this.currentItem++;
-            console.log("this.wrapper!.scrollWidth :", this.wrapper.scrollWidth);
-            console.log("this.sliderItems!.length :", this.sliderItems.length);
-            console.log("this.movePer :", this.movePer);
-            console.log("this.wrapper!.scrollLeft  :", this.wrapper.scrollLeft);
+            // console.log("this.wrapper!.scrollWidth :", this.wrapper!.scrollWidth);
+            // console.log("this.sliderItems!.length :", this.sliderItems!.length);
+            // console.log("this.movePer :", this.movePer);
+            // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
+            // console.log('----');
         };
         this.leftMover = () => {
             this.movePer = this.wrapper.scrollWidth / this.sliderItems.length;
@@ -44,10 +44,11 @@ export class Slider {
             }
             this.wrapper.scrollLeft -= this.movePer;
             this.currentItem--;
-            console.log("this.wrapper!.scrollWidth :", this.wrapper.scrollWidth);
-            console.log("this.sliderItems!.length :", this.sliderItems.length);
-            console.log("this.movePer :", this.movePer);
-            console.log("this.wrapper!.scrollLeft  :", this.wrapper.scrollLeft);
+            // console.log("this.wrapper!.scrollWidth :", this.wrapper!.scrollWidth);
+            // console.log("this.sliderItems!.length :", this.sliderItems!.length);
+            // console.log("this.movePer :", this.movePer);
+            // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
+            // console.log('++++');
         };
         this.handlerControlNext = () => {
             var _a;
@@ -77,7 +78,7 @@ export class Slider {
         this.controlPrev = document.getElementById(`${name}__crl__prev`);
         this.controlNext = document.getElementById(`${name}__crl__next`);
         this.sliderItems = document.querySelectorAll(`#${name}__slider__wrapper .slider__item`);
-        console.log("`#${name}__slider__wrapper` :", `#${name}__slider__wrapper`);
+        // console.log("`#${name}__slider__wrapper` :", `#${name}__slider__wrapper`);
         this.wrapper.onmousedown = (event) => {
             this.dragSliderItem(event);
         };
@@ -111,6 +112,7 @@ export class Slider {
         //   "`${name}slider__item`) :",
         //   `.${name}__slider__wrapper .slider__item`
         // );
+        // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
         // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
     }
 }

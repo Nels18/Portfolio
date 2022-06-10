@@ -4,11 +4,19 @@ import { Modal } from "./Modal.js";
 
 /* Variables */
 const projects = document.querySelectorAll("#project-section .card.shadow");
-const ptechnologySlider = new Slider('technology');
+const technologySlider = new Slider('technology');
 
 // Slider
 projects.forEach((project) => {
   const projectSlider = new Slider(project.id);
+
+  const sliderWrapper = project?.querySelector('.slider__wrapper');
+
+
+  sliderWrapper!.scrollLeft = 0;
+  setTimeout(() => {
+    console.log('sliderWrapper!.scrollLeft :', sliderWrapper!.scrollLeft);
+  }, 500);
 
   projectSlider.sliderItems!.forEach((item) => {
     (item.children[0] as HTMLImageElement).style.width =

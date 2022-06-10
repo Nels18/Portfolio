@@ -3,10 +3,15 @@ import { Navbar } from "./Navbar.js";
 import { Modal } from "./Modal.js";
 /* Variables */
 const projects = document.querySelectorAll("#project-section .card.shadow");
-const ptechnologySlider = new Slider('technology');
+const technologySlider = new Slider('technology');
 // Slider
 projects.forEach((project) => {
     const projectSlider = new Slider(project.id);
+    const sliderWrapper = project === null || project === void 0 ? void 0 : project.querySelector('.slider__wrapper');
+    sliderWrapper.scrollLeft = 0;
+    setTimeout(() => {
+        console.log('sliderWrapper!.scrollLeft :', sliderWrapper.scrollLeft);
+    }, 500);
     projectSlider.sliderItems.forEach((item) => {
         item.children[0].style.width =
             item.clientWidth.toString() + "px";
