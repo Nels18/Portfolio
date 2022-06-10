@@ -1,150 +1,38 @@
-"use strict";
+import { Slider } from "./Slider.js";
+import { Navbar } from "./Navbar.js";
+import { Modal } from "./Modal.js";
 /* Variables */
-const navbar = document.getElementById("navbar");
-const burger = document.getElementById("burger");
-const navbarLinks = document.querySelectorAll(".nav__link");
-const wrapper = document.querySelector(".slider__wrapper");
-const slideImg = document.querySelector(".slider__wrapper img");
-const controlPrev = document.getElementById("crl__prev");
-const controlNext = document.getElementById("crl__next");
-const sliderItems = document.getElementsByClassName("slider__item");
-let movePer;
-const btnCloseModal = document.getElementById("btn-close-modal");
-const btnOpenModal = document.getElementById("btn-open-modal");
-const modalResume = document.getElementById("modal-resume");
-const overlayResume = document.querySelector("#modal-resume .modal__overlay");
-const modalBody = document.querySelector("#modal-resume .modal__body");
-const modalImg = document.querySelector("#modal-resume img");
-let pressed = false;
-let startX = 0;
-let currentItem = 0;
-/* Fonctions */
-const toggleMenu = () => {
-  navbar === null || navbar === void 0
-    ? void 0
-    : navbar.classList.toggle("active");
-};
-const hideMenu = () => {
-  navbar === null || navbar === void 0
-    ? void 0
-    : navbar.classList.remove("active");
-};
-const moveSliderItem = (event) => {
-  if (!pressed) return;
-  wrapper.scrollLeft += startX - event.clientX;
-};
-const dropSliderItem = () => {
-  pressed = false;
-  wrapper.style.cursor = "grab";
-};
-const dragSliderItem = (event) => {
-  pressed = true;
-  startX = event.clientX;
-  wrapper.style.cursor = "grabbing";
-};
-const enableControl = (control) => {
-  control.classList.remove("disabled");
-};
-const disableControl = (control) => {
-  control.classList.add("disabled");
-};
-const rightMover = () => {
-  movePer = wrapper.scrollWidth / sliderItems.length;
-  if (currentItem > sliderItems.length) {
-    return (currentItem = sliderItems.length);
-  }
-  wrapper.scrollLeft += movePer;
-  currentItem++;
-};
-const leftMover = () => {
-  movePer = wrapper.scrollWidth / sliderItems.length;
-  if (currentItem <= 0) {
-    return (currentItem = 0);
-  }
-  wrapper.scrollLeft -= movePer;
-  currentItem--;
-};
-const openModal = () => {
-  modalResume.classList.add("visible");
-};
-const closeModal = () => {
-  modalResume.classList.remove("visible");
-};
-/* Code */
-// Menu
-navbarLinks.forEach((link) => {
-  link.onclick = () => {
-    hideMenu();
-  };
-});
-burger.onclick = () => {
-  toggleMenu();
-};
+const projects = document.querySelectorAll("#project-section .card.shadow");
+const ptechnologySlider = new Slider('technology');
 // Slider
-wrapper.onmousedown = (event) => {
-  dragSliderItem(event);
+projects.forEach((project) => {
+    const projectSlider = new Slider(project.id);
+    projectSlider.sliderItems.forEach((item) => {
+        item.children[0].style.width =
+            item.clientWidth.toString() + "px";
+    });
+});
+window.onresize = () => {
+    projects.forEach((project) => {
+        const slider = project.querySelector('.slider');
+        const sliderWrapper = slider === null || slider === void 0 ? void 0 : slider.querySelector('.slider__wrapper');
+        const sliderItems = sliderWrapper === null || sliderWrapper === void 0 ? void 0 : sliderWrapper.querySelectorAll('.slider__item');
+        function resizeElement(sliderItem) {
+            sliderItem.style.width =
+                (sliderWrapper === null || sliderWrapper === void 0 ? void 0 : sliderWrapper.clientWidth.toString()) + "px";
+        }
+        if (!sliderItems)
+            return;
+        sliderItems.forEach(sliderItem => {
+            resizeElement(sliderItem);
+            const image = sliderItem.querySelector('img');
+            if (!image)
+                return;
+            resizeElement(image);
+        });
+    });
 };
-wrapper.onmouseup = () => {
-  dropSliderItem();
-};
-wrapper.onmousemove = (event) => {
-  moveSliderItem(event);
-};
-wrapper.onmouseleave = () => {
-  pressed = false;
-};
-// Control
-controlNext.onclick = () => {
-  if (
-    controlNext === null || controlNext === void 0
-      ? void 0
-      : controlNext.classList.contains("disabled")
-  )
-    return;
-  rightMover();
-  if (currentItem === sliderItems.length) {
-    disableControl(controlNext);
-  }
-  if (currentItem !== 0) {
-    enableControl(controlPrev);
-  }
-};
-controlPrev.onclick = () => {
-  if (
-    controlPrev === null || controlPrev === void 0
-      ? void 0
-      : controlPrev.classList.contains("disabled")
-  )
-    return;
-  leftMover();
-  if (currentItem === 0) {
-    disableControl(controlPrev);
-  }
-  if (currentItem !== sliderItems.length) {
-    enableControl(controlNext);
-  }
-};
-window.onload = () => {
-  if (currentItem === sliderItems.length) {
-    disableControl(controlNext);
-  }
-  if (currentItem === 0) {
-    disableControl(controlPrev);
-  }
-};
+// Menu
+const navbar = new Navbar();
 // Modal
-btnOpenModal.onclick = () => {
-  openModal();
-};
-btnCloseModal.onclick = () => {
-  closeModal();
-};
-overlayResume.onclick = () => {
-  closeModal();
-};
-modalBody.onclick = (event) => {
-  closeModal();
-};
-modalImg.onclick = (event) => {
-  event.stopPropagation();
-};
+const modal = new Modal();

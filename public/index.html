@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Lato:wght@900&display=swap"
     rel="stylesheet">
-  <link rel='stylesheet' href='/public/styles/style.css'>
+  <link rel='stylesheet' href='/public/style.css'>
   <title></title>
 </head>
 
@@ -69,8 +69,45 @@
     <section class="project" id="project-section">
       <h2>Projets réalisés</h2>
       <div class="card__container">
-        <div class="card shadow">
-          <div class="card__img paristic-img"></div>
+        <div class="card shadow" id="invest-immo">
+          <!-- <div class="slider card__img">
+            <span class="control control__prev" id="project__crl__prev"></span>
+            <div class="slider__wrapper" id="project__slider__wrapper">
+              <div class="slider__item">
+                <div class="">
+                  <img src="/public/img/screenshot_invest-immo.png" alt="">
+                </div>
+              </div>
+              <div class="slider__item">
+                  <img src="/public/img/screenshot_invest-immo.png" alt="">
+                </div>
+              </div>
+              <div class="slider__item">
+                  <img src="/public/img/screenshot_invest-immo.png" alt="">
+                </div>
+              </div>
+    
+            </div>
+    
+            <span class="control control__next" id="project__crl__next"></span>
+    
+          </div> -->
+          <div class="slider">
+            <span class="control control__prev" id="invest-immo__crl__prev"></span>
+            <div class="slider__wrapper" id="invest-immo__slider__wrapper">
+              <div class="slider__item">
+                <img src="/public/img/screenshot_invest-immo.png" alt="">
+              </div>
+              <div class="slider__item">
+                <img src="/public/img/screenshot_pokedex.png" alt="">
+              </div>
+              <div class="slider__item">
+                <img src="/public/img/screenshot_donkey-meteo.png" alt="">
+              </div>
+            </div>
+            <span class="control control__next" id="invest-immo__crl__next"></span>
+          </div>
+
           <div class="card__body">
             <p class="card__title">Invest Immo</p>
             <p>Application web pour investisseur immobilier.</p>
@@ -82,9 +119,22 @@
               <li>Création d'une API.</li>
             </ul>
           </div>
+          <div class="card__buttons">
+            <a href="">
+              <button class="btn-primary">Voir le répertoire</button>
+            </a>
+          </div>
         </div>
-        <div class="card shadow">
-          <div class="card__img" style="background-image: url(/public/img/paristic.png)"></div>
+        <div class="card shadow" id="paristic">
+          <div class="slider">
+            <span class="control control__prev" id="paristic__crl__prev"></span>
+            <div class="slider__wrapper" id="paristic__slider__wrapper">
+              <div class="slider__item">
+                <img src="/public/img/screenshot_paristic.png" alt="">
+              </div>
+            </div>
+            <span class="control control__next" id="paristic__crl__next"></span>
+          </div>
           <div class="card__body">
             <p class="card__title">Paristic - la boutique</p>
             <p>Site e-commerce pour une agence de stikers et de vitrophanie réaliser avec Wordpress.</p>
@@ -94,8 +144,18 @@
             </ul>
           </div>
         </div>
-        <div class="card shadow">
-          <div class="card__img" style="background-image: url(/public/img/paristic.png)"></div>
+      </div>
+      <div class="card shadow" id="booklist">
+        <div>
+          <div class="slider">
+            <span class="control control__prev" id="booklist__crl__prev"></span>
+            <div class="slider__wrapper" id="booklist__slider__wrapper">
+              <div class="slider__item">
+                <img src="/public/img/screenshot_booklist.png" alt="">
+              </div>
+            </div>
+            <span class="control control__next" id="booklist__crl__next"></span>
+          </div>
           <div class="card__body">
             <p class="card__title">BookList</p>
             <p>Site de bibliothèque en ligne.</p>
@@ -104,8 +164,23 @@
             </ul>
           </div>
         </div>
-        <div class="card shadow">
-          <div class="card__img" style="background-image: url(/public/img/paristic.png)"></div>
+        <div class="card__buttons">
+          <a href="">
+            <button class="btn-primary">Voir le répertoire</button>
+          </a>
+        </div>
+      </div>
+      <div class="card shadow" id="pokedex">
+        <div>
+          <div class="slider">
+            <span class="control control__prev" id="pokedex__crl__prev"></span>
+            <div class="slider__wrapper" id="pokedex__slider__wrapper">
+              <div class="slider__item">
+                <img src="/public/img/screenshot_pokedex.png" alt="">
+              </div>
+            </div>
+            <span class="control control__next" id="pokedex__crl__next"></span>
+          </div>
           <div class="card__body">
             <p class="card__title">Pokedex</p>
             <p>Application de pokedex en SPA.</p>
@@ -116,8 +191,23 @@
             </ul>
           </div>
         </div>
-        <div class="card shadow">
-          <div class="card__img" style="background-image: url(/public/img/paristic.png)"></div>
+        <div class="card__buttons">
+          <a href="">
+            <button class="btn-primary">Voir le répertoire</button>
+          </a>
+        </div>
+      </div>
+      <div class="card shadow" id="donkey-serie">
+        <div>
+          <div class="slider">
+            <span class="control control__prev" id="donkey-serie__crl__prev"></span>
+            <div class="slider__wrapper" id="donkey-serie__slider__wrapper">
+              <div class="slider__item">
+                <img src="/public/img/screenshot_donkey-serie.png" alt="">
+              </div>
+            </div>
+            <span class="control control__next" id="donkey-serie__crl__next"></span>
+          </div>
           <div class="card__body">
             <p class="card__title">Donkey Serie</p>
             <p>Application regroupant les informations de séries.</p>
@@ -128,6 +218,74 @@
             </ul>
           </div>
         </div>
+        <div class="card__buttons">
+          <a href="">
+            <button class="btn-primary">Voir le répertoire</button>
+          </a>
+        </div>
+      </div>
+      <div class="card shadow" id="donkey-meteo">
+        <div>
+          <div class="slider">
+            <span class="control control__prev" id="donkey-meteo__crl__prev"></span>
+            <div class="slider__wrapper" id="donkey-meteo__slider__wrapper">
+              <div class="slider__item">
+                <img src="/public/img/screenshot_donkey-meteo.png" alt="">
+              </div>
+            </div>
+            <span class="control control__next" id="donkey-meteo__crl__next"></span>
+          </div>
+          <div class="card__body">
+            <p class="card__title">Donkey Météo</p>
+            <p>Application mobile de météo.</p>
+            <ul>
+              <li>Réaliser avec Ionic 6 et Angular 13.</li>
+              <li>Intégration continue et développement continue.</li>
+              <li>Utilisation d'API (Google Places, OpenWeather).</li>
+              <li>Affichage des prévisions sur la carte de France.</li>
+              <li>Slider responsive, gérant le tactile</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card__buttons">
+          <a href="">
+            <button class="btn-primary">Voir le répertoire</button>
+          </a>
+          <a href="">
+            <button class="btn-primary">Voir le site</button>
+          </a>
+        </div>
+      </div>
+      <div class="card shadow" id="snake-game">
+        <div>
+          <div class="slider">
+            <span class="control control__prev" id="snake-game__crl__prev"></span>
+            <div class="slider__wrapper" id="snake-game__slider__wrapper">
+              <div class="slider__item">
+                <img src="/public/img/screenshot_snake-game.png" alt="">
+              </div>
+            </div>
+            <span class="control control__next" id="snake-game__crl__next"></span>
+          </div>
+          <div class="card__body">
+            <p class="card__title">Snake Game</p>
+            <p>Jeu rétro du serpent.</p>
+            <ul>
+              <li>Réaliser avec Angular 13.</li>
+              <li>Intégration continue et développement continue.</li>
+              <li>Utilisation d'un canvas pour la zone de jeu.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card__buttons">
+          <a href="">
+            <button class="btn-primary">Voir le répertoire</button>
+          </a>
+          <a href="">
+            <button class="btn-primary">Voir le site</button>
+          </a>
+        </div>
+      </div>
       </div>
     </section>
     <section class="education" id="education-section">
@@ -152,8 +310,8 @@
     <section class="technology" id="technology-section">
       <h2>Technologies</h2>
       <div class="slider">
-        <span class="control control__prev" id="crl__prev"></span>
-        <div class="slider__wrapper">
+        <span class="control control__prev" id="technology__crl__prev"></span>
+        <div class="slider__wrapper" id="technology__slider__wrapper">
           <div class="slider__item">
             <img src="/public/img/logo_html-5.png" alt="">
             <p>HTML 5</p>
@@ -199,7 +357,7 @@
             <p>Wordpress</p>
           </div>
         </div>
-        <span class="control control__next" id="crl__next"></span>
+        <span class="control control__next" id="technology__crl__next"></span>
       </div>
     </section>
     <section class="contact" id="contact-section">
@@ -232,7 +390,7 @@
       </a>
     </div>
   </footer>
-  <script src="/public/scripts/main.js" type="module"></script>
+  <script type="module" src="/public/scripts/main.js"></script>
 </body>
 
 </html>
