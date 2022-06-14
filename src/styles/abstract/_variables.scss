@@ -20,6 +20,10 @@ $aquamarine: #2BCCC4;
 /// @type Color
 $congress-blue: #2065C1;
 
+/// Red Salsa
+/// @type Color
+$red-salsa: #FB3640;
+
 /// Dark Grey
 /// @type Color
 $dark-grey: hsl(0, 0%, 20%);
@@ -38,6 +42,11 @@ $primary-color: $aquamarine;
 /// @require $congress-blue;
 $secondary-color: $congress-blue;
 
+/// Danger
+/// @type Color
+/// @require $red-salsa;
+$danger-color: $red-salsa;
+
 /// Light Primary
 /// @type Color
 /// @require $primary-color
@@ -46,7 +55,7 @@ $light-primary-color: scale-color($primary-color, $lightness: 40%);
 /// Dark Primary
 /// @type Color
 /// @require $primary-color
-$dark-primary-color: scale-color($primary-color, $lightness: -50%);
+$dark-primary-color: scale-color($primary-color, $lightness: -30%);
 
 
 /// Darker Primary
@@ -63,6 +72,16 @@ $light-secondary-color: scale-color($secondary-color, $lightness: 20%);
 /// @type Color
 /// @require $secondary-color
 $dark-secondary-color: scale-color($secondary-color, $lightness: -20%);
+
+/// light danger
+/// @type Color
+/// @require $danger-color
+$light-danger-color: scale-color($danger-color, $lightness: 20%);
+
+/// Dark danger
+/// @type Color
+/// @require $danger-color
+$dark-danger-color: scale-color($danger-color, $lightness: -20%);
 
 /// Breackpoints
 $breakpoints: (

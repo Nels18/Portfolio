@@ -6,8 +6,15 @@
     background-color: $secondary-color;
     color: $light-grey;
 
-    .form {
-        max-width: 800px;
-        margin: 5em auto;
+    button {
+        width: 100%;
+    }
+}
+
+@include useBreakpoint(md) {
+    .contact {
+        button {
+            width: fit-content;
+        }
     }
 }

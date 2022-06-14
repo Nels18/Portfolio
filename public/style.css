@@ -590,7 +590,7 @@ html body h1, html body h2 {
   text-align: center;
 }
 html body .shadow {
-  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.4), 1px 3px 8px rgba(39, 44, 49, 0.3);
 }
 html body .overlay {
   background-color: #2165c1;
@@ -616,9 +616,6 @@ html body .logo {
   margin: 0 auto;
   margin-bottom: 20px;
 }
-html body .paristic-img {
-  background-image: url(/public/img/paristic.png);
-}
 html body .logo-ds {
   background-image: url(/public/img/logo-donkeyschool.png);
 }
@@ -637,7 +634,10 @@ html body .logo-lem {
 .card {
   margin: 6em 0;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .card .card__title {
   font-size: 1.4rem;
@@ -647,17 +647,22 @@ html body .logo-lem {
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
-.card .card__img {
-  width: 100%;
-  height: 300px;
-  background-position-x: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
 .card .card__body {
   padding: 20px;
+}
+.card .card__buttons {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card .card__buttons a {
+  width: 100%;
+  margin-top: 1rem;
+}
+.card .card__buttons a button {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .card__horizontal {
@@ -679,22 +684,12 @@ html body .logo-lem {
     margin-bottom: 0;
   }
 }
-@media screen and (min-width: 1200px) {
-  .card__container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  .card__container .card {
-    width: 40%;
-  }
-}
 button {
   padding: 10px 30px;
   font-weight: 700;
   margin: 10px 0;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
@@ -736,7 +731,7 @@ button:focus {
 .form textarea {
   width: 100%;
   border: 1px solid #aaa;
-  border-radius: 3px;
+  border-radius: 5px;
   margin: 10px 0;
   padding: 1rem;
 }
@@ -810,20 +805,22 @@ button:focus {
 }
 .nav__container .burger__btn {
   right: 2em;
-  top: 2em;
+  top: 1.8em;
 }
 .nav__container .nav__links {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 100px;
+  top: 3em;
   left: 0;
   margin: 0 2em;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: height 1s;
 }
 .nav__container .nav__links .nav__link {
-  margin: 2rem 0;
+  padding: 1rem 0;
+  line-height: 1rem;
+  margin: 0;
 }
 .nav__container .nav__links .nav__link > a {
   color: #f2f2f2;
@@ -1105,6 +1102,49 @@ button:focus {
 .project {
   background-color: #2065C1;
 }
+.project .card .slider {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.project .card .slider .control {
+  width: 40px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.9rem;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project .card .slider .control::before {
+  display: block;
+  position: absolute;
+  background-color: rgba(242, 242, 242, 0.2);
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  line-height: 42px;
+  transition: background-color 0.3s ease-out;
+}
+.project .card .slider .control::before:hover::before {
+  background-color: rgba(242, 242, 242, 0.4);
+}
+.project .card .slider .control.control__prev {
+  left: 20px;
+}
+.project .card .slider .control.control__next {
+  right: 20px;
+}
+.project .card .slider .slider__item {
+  display: block;
+  width: 100%;
+}
+.project .card .slider .slider__item img {
+  width: auto;
+  height: 100%;
+}
 .project .card ul {
   margin-left: 0.5rem;
 }
@@ -1115,8 +1155,12 @@ button:focus {
 @media screen and (min-width: 1200px) {
   .project .card__container {
     margin: 6em 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   .project .card__container .card {
+    width: 40%;
     margin-right: 0;
     margin-left: 0;
   }

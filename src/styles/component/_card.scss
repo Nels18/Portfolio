@@ -5,6 +5,10 @@
 .card {
   margin: 6em 0;
   background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .card__title {
     font-size: 1.4rem;
@@ -16,17 +20,28 @@
     margin-bottom: 5px;
   }
 
-  .card__img {
-    width: 100%;
-    height: 300px;
-    background-position-x: 50%;
-    // background-position-y: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   .card__body {
     padding: 20px;
+  }
+
+  .card__buttons {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+      width: 100%;
+      margin-top: 1rem;
+      // &:not(:last-child) {
+      //   margin-right: 2rem;
+      // }
+
+      button {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -52,18 +67,6 @@
           margin-bottom: 0;
         }
       }
-    }
-  }
-}
-
-@include useBreakpoint(xl) {
-  .card__container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    .card {
-      width: 40%;
     }
   }
 }

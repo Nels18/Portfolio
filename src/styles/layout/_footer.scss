@@ -10,8 +10,19 @@
     .icon-link {
 
         margin-right: 0.5em;
+        transition: opacity .3s ease-out;
+        
         &:hover {
             opacity: 0.6;
+            transform: rotate(25deg);
+        }
+        
+        svg {
+            transition: transform .3s ease-out;
+
+            &:hover {
+                transform: rotate(25deg) scale(1.2);
+            }
         }
     }
 }

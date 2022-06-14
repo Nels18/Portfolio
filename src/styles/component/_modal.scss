@@ -1,0 +1,115 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    transition: visibility .6s;
+    position: fixed;
+    min-width: 320px;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    .modal__overlay {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: #000;
+        opacity: .5;
+        transition: opacity .6s .2s ease-out;
+    }
+
+    .modal__body {
+        width: 80%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translate(0, calc(-200% - 50px));
+        transition: opacity .6s .2s ease-out,
+                    transform .6s .2s ease-out;
+
+        .modal__file {
+            img {
+                display: block;
+                width: 100%;
+                margin: auto;
+                max-width: 600px;
+            }
+
+            &:hover {
+                overflow-x: scroll;
+                width: 70vw;
+                min-width: 210px;
+                
+                img {
+                    width: 200%;
+                }
+            }
+        }
+
+        .modal__btn {
+            margin-top: 1em;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+    &.visible {
+        visibility: visible;
+        transition: visibility 0s;
+        
+        .modal__overlay {
+            opacity: .8;
+            transition: opacity .6s ease-out;
+        }
+    
+        .modal__body {
+            opacity: 1;
+            transform: translate(0, 0);
+            transition: opacity .6s .2s ease-out,
+                        transform .6s ease-out;
+        }
+    }
+}
+
+@include useBreakpoint(md) {
+    .modal {
+        .modal__body {
+            .modal__file{
+                img {
+                    height: 80vh;
+                }
+
+                &:hover {
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                    height: 80vh;
+                    width: auto;
+                    
+                    img {
+                        width: 100%;
+                        height: auto;
+                        max-width: none;
+                        transform: scale(1);
+                    }
+                }
+            }
+            .modal__btn {
+                button {
+                    width: auto;
+
+                    &.btn-danger {
+                        margin-left: 1em;
+                    }
+                }
+            }
+        }
+    }
+}

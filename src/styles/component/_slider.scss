@@ -25,6 +25,7 @@
       height: 1.5em;
       border-radius: 50%;
       line-height: 42px;
+      transition: background-color .3s ease-out;
     }
 
     &:hover::before {
