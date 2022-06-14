@@ -6,6 +6,10 @@ const projects = document.querySelectorAll("#project-section .card.shadow");
 const technologySlider = new Slider('technology');
 // Slider
 projects.forEach((project) => {
+    console.log('project.id :', project.id);
+    console.log('!project.id :', !project.id);
+    if (!project.id)
+        return;
     const projectSlider = new Slider(project.id);
     const sliderWrapper = project === null || project === void 0 ? void 0 : project.querySelector('.slider__wrapper');
     sliderWrapper.scrollLeft = 0;

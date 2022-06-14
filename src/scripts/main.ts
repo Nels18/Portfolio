@@ -8,6 +8,9 @@ const technologySlider = new Slider('technology');
 
 // Slider
 projects.forEach((project) => {
+  console.log('project.id :', project.id);
+  console.log('!project.id :', !project.id);
+  if (!project.id) return;
   const projectSlider = new Slider(project.id);
 
   const sliderWrapper = project?.querySelector('.slider__wrapper');
@@ -15,6 +18,7 @@ projects.forEach((project) => {
 
   sliderWrapper!.scrollLeft = 0;
   setTimeout(() => {
+    
     console.log('sliderWrapper!.scrollLeft :', sliderWrapper!.scrollLeft);
   }, 500);
 

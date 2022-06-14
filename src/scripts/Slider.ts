@@ -20,6 +20,11 @@ export class Slider {
     this.sliderItems = document.querySelectorAll(
       `#${name}__slider__wrapper .slider__item`
     );
+    
+    if (this.sliderItems.length <= 1) {
+      this.disableControl(this.controlPrev!);
+      this.disableControl(this.controlNext!);
+    }
 
     // console.log("`#${name}__slider__wrapper` :", `#${name}__slider__wrapper`);
 
@@ -56,16 +61,6 @@ export class Slider {
     this.controlPrev!.onclick = () => {
       this.handlerControlPrev();
     };
-
-    // console.log('controlPrev :', this.controlPrev);
-    // console.log('controlNext :', this.controlNext);
-    // console.log("sliderItems :", this.sliderItems);
-    // console.log(
-    //   "`${name}slider__item`) :",
-    //   `.${name}__slider__wrapper .slider__item`
-    // );
-    // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
-    // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
   }
 
   moveSliderItem = (event: MouseEvent) => {

@@ -78,6 +78,10 @@ export class Slider {
         this.controlPrev = document.getElementById(`${name}__crl__prev`);
         this.controlNext = document.getElementById(`${name}__crl__next`);
         this.sliderItems = document.querySelectorAll(`#${name}__slider__wrapper .slider__item`);
+        if (this.sliderItems.length <= 1) {
+            this.disableControl(this.controlPrev);
+            this.disableControl(this.controlNext);
+        }
         // console.log("`#${name}__slider__wrapper` :", `#${name}__slider__wrapper`);
         this.wrapper.onmousedown = (event) => {
             this.dragSliderItem(event);
@@ -105,14 +109,5 @@ export class Slider {
         this.controlPrev.onclick = () => {
             this.handlerControlPrev();
         };
-        // console.log('controlPrev :', this.controlPrev);
-        // console.log('controlNext :', this.controlNext);
-        // console.log("sliderItems :", this.sliderItems);
-        // console.log(
-        //   "`${name}slider__item`) :",
-        //   `.${name}__slider__wrapper .slider__item`
-        // );
-        // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
-        // console.log("this.wrapper!.scrollLeft  :", this.wrapper!.scrollLeft);
     }
 }
